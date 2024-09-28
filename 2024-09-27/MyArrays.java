@@ -2,10 +2,10 @@ public class MyArrays {
   public static String aryToString(int[] nums) {
     String result = "[";
     for (int i=0; i<nums.length;i++) {
-      if (i == nums.length-1) {
         result += nums[i];
+      if (i<nums.length-1) {
+      result += ", ";
       }
-      result += nums[i] + ", ";
     }
     return result+"]";
   }
@@ -20,7 +20,7 @@ public class MyArrays {
   }
   
   public static int[] concatArray(int[] ary1, int[] ary2) {
-    int[] result = new int[ary1.length + ary2.length]l;
+    int[] result = new int[ary1.length + ary2.length];
     int index = 0;
     for (int i=0; i<ary1.length; i++) {
       result[index++] = ary1[i];
@@ -33,10 +33,15 @@ public class MyArrays {
 
 
   public static void main (String[] args) {
-    int[] original = new int {1,2,3,4};
+    int[] original = new int[] {1,2,3,4};
     int[] copy = returnCopy(original);
-    System.out.println("Original: " + 
-    
-    
+    System.out.println("Original: " + aryToString(original));
+    System.out.println("Copy: " + aryToString(copy));
+    System.out.println("Check: " + (original == copy));
+
+    int[] ary1 = new int[] {1,2,3,4};
+    int[] ary2 = new int[] {5,6,7,8};
+    int[] concat = concatArray(ary1, ary2);
+    System.out.println("Concatenated: " + aryToString(concat)); 
   }
 }
