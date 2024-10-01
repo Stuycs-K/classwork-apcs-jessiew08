@@ -33,7 +33,7 @@ public class ArrayMethods {
     }
     return sum;
   }
-  
+
   public static int[][] swapRC(int[][] nums) {
     int rows = nums.length;
     int cols = nums[0].length;
@@ -46,6 +46,21 @@ public class ArrayMethods {
     return swapResult;
   }
 
+  public static void replaceNegative(int[][] vals) {
+    for (int i=0; i<vals.length; i++) {
+      for (int j=0; j<vals[i].length; j++) {
+        if (vals[i][j] < 0) {
+          if (i==j) {
+            vals[i][j]=1;
+          }
+          else {
+            vals[i][j]=0;
+          }
+        }
+      }
+    }
+    return vals;
+  }
 
   public static void main(String[] args){
     int[] test1d = new int[]{1, 2, 3, 4};
@@ -61,7 +76,7 @@ public class ArrayMethods {
     System.out.println("empty 1d expected: []\nresult: " + arrToString(empty1D));
     System.out.println("empty 2d expected: []\nresult: " + arrToString(empty2D));
     System.out.println("empty 2d expected sum: 0\nempty 2d result sum: " + arr2DSum(empty2D));
-    
+
     System.out.println("1d array expected: [1, 2, 3, 4]\n1d array result: " + arrToString(test1d));
     System.out.println("2d array expected: [[0, 0], [0, 0], [0, 0], [0, 0]]\n2d array result: " + arrToString(test2d));
 
