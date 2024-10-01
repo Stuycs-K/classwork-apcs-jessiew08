@@ -70,7 +70,13 @@ public class ArrayMethods {
     return newRow;
  }
 
-
+  public static int[][] copy(int[][] nums) {
+    int[][] copyArray = new int[nums.length][];
+    for (int i=0; i<nums.length; i++) {
+      copyArray[i] = copyRow(nums[i]);
+    }
+    return copyArray;
+  }
 
   public static void main(String[] args){
     int[] test1d = new int[]{1, 2, 3, 4};
@@ -110,5 +116,10 @@ public class ArrayMethods {
     System.out.println("single row empty expected swap: [[]]\nsingle row empty result: " + arrToString(swapRC(singleRowEmpty)));
 
     System.out.println("replace negative expected: [[1, 2, 3], [4, 1, 6], [7, 8, 1]]\nreplace negative result: " + (arrToString(replaceNegative(negativeAry))));
+
+    int[][] original = {{1, 2}, {3, 4}, {5, 6}};
+    int[][] copy = copy(original);
+    original[0][0] = 99;
+    System.out.println("original changed: [[99, 2], [3, 4], [5, 6]]\ncopy result: " + arrToString(copy));
   }
 }
