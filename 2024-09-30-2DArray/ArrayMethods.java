@@ -61,6 +61,16 @@ public class ArrayMethods {
     }
     return vals;
   }
+  
+  public static int[] copyRow(int[] row) {
+    int[] newRow = new int[row.length];
+    for (int i=0; i<row.length; i++) {
+      newRow[i] = row[i];
+    }
+    return newRow;
+ }
+
+
 
   public static void main(String[] args){
     int[] test1d = new int[]{1, 2, 3, 4};
