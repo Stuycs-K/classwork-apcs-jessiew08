@@ -46,7 +46,7 @@ public class ArrayMethods {
     return swapResult;
   }
 
-  public static void replaceNegative(int[][] vals) {
+  public static int[][] replaceNegative(int[][] vals) {
     for (int i=0; i<vals.length; i++) {
       for (int j=0; j<vals[i].length; j++) {
         if (vals[i][j] < 0) {
@@ -72,6 +72,7 @@ public class ArrayMethods {
     int[][] empty2D = new int[][]{};
     int[][] EmptyRows = new int[][]{{}, {}, {}};
     int[][] singleRowEmpty = new int[][]{{}};
+    int[][] negativeAry = new int[][] {{-1, 2, 3}, {4, -5, 6}, {7, 8, -9}};
 
     System.out.println("empty 1d expected: []\nresult: " + arrToString(empty1D));
     System.out.println("empty 2d expected: []\nresult: " + arrToString(empty2D));
@@ -98,5 +99,6 @@ public class ArrayMethods {
     System.out.println("single row empty expected sum: 0\nsingle row empty result sum: " + arr2DSum(singleRowEmpty));
     System.out.println("single row empty expected swap: [[]]\nsingle row empty result: " + arrToString(swapRC(singleRowEmpty)));
 
+    System.out.println("replace negative expected: [[1, 2, 3], [4, 1, 6], [7, 8, 1]]\nreplace negative result: " + (arrToString(replaceNegative(negativeAry))));
   }
 }
