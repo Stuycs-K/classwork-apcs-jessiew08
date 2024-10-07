@@ -36,7 +36,15 @@ public class ArrayDemo{
 
   //1. Calculate and return how many elements equal zero in the 2D array.
   public static int countZeros2D(int[][] nums){
-    return 0;
+    int count = 0;
+    for (int i=0; i<nums.length; i++) {
+      for (int j=0; j<nums[0].length,j++) {
+        if (nums[i][j] == 0) {
+          count += 1;
+        }
+      }
+    }
+    return count;
   }
 
   //2. Calculate the sum of a 2d array
@@ -117,6 +125,9 @@ public class ArrayDemo{
   //   e.g. htmlTable(new int[][]{{1,2},{3}})  returns:
   // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
   public static String htmlTable(int[][]nums){
-    return "";
+    String table = "<table>"
+    for (int i=0; i<nums.length; i++) {
+      table += "<tr>";
+    }
   }
 }
