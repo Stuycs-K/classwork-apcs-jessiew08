@@ -38,7 +38,7 @@ public class ArrayDemo{
   public static int countZeros2D(int[][] nums){
     int count = 0;
     for (int i=0; i<nums.length; i++) {
-      for (int j=0; j<nums[0].length,j++) {
+      for (int j=0; j<nums[i].length,j++) {
         if (nums[i][j] == 0) {
           count += 1;
         }
@@ -124,10 +124,16 @@ public class ArrayDemo{
   //   Note there is no whitespace in the string, it all one line with no spaces/tabs.
   //   e.g. htmlTable(new int[][]{{1,2},{3}})  returns:
   // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
-  public static String htmlTable(int[][]nums){
-    String table = "<table>"
-    for (int i=0; i<nums.length; i++) {
+  public static String htmlTable(int[][] nums) {
+    String table = "<table>";
+    for (int i = 0; i < nums.length; i++) {
       table += "<tr>";
+      for (int j = 0; j < nums[i].length; j++) {
+        table += "<td>" + nums[i][j] + "</td>";
+      }
+      table += "</tr>";
     }
+    table += "</table>";
+    return table;
   }
 }
