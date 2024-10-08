@@ -9,28 +9,48 @@ public class ArrayDemo{
     int[] array1D = {1, 2, 3, 4, 5};
     System.out.println("Testing arrToString (1D):");
     System.out.println("Expected: " + Arrays.toString(array1D));
-    System.out.println("Actual:   " + arrToString(array1D));
+    System.out.println("Actual: " + arrToString(array1D));
     System.out.println();
 
     int[][] array2D = {{1, 2, 3}, {4, 5}, {6, 7, 8, 9}};
     System.out.println("Testing arrToString (2D):");
-    System.out.println("Expected: " + Arrays.deepToString(array2D)); // Use deepToString for 2D array comparison
-    System.out.println("Actual:   " + arrToString(array2D));
+    System.out.println("Expected: " + "[[1, 2, 3], [4, 5], [6, 7, 8, 9]]");
+    System.out.println("Actual: " + arrToString(array2D));
     System.out.println();
 
     int[][] arrayWithZeros = {{0, 1, 2}, {3, 0, 4}, {0, 0, 0}};
     System.out.println("Testing countZeros2D:");
     System.out.println("Expected: 5");
-    System.out.println("Actual:   " + countZeros2D(arrayWithZeros));
+    System.out.println("Actual: " + countZeros2D(arrayWithZeros));
     System.out.println();
 
     int[][] arrayToSum = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
     System.out.println("Testing arr2DSum:");
     System.out.println("Expected: 45");
-    System.out.println("Actual:   " + arr2DSum(arrayToSum));
+    System.out.println("Actual: " + arr2DSum(arrayToSum));
     System.out.println();
 
+    
+    int[][] original = {{1, 2}, {3, 4}, {5, 6}};
+    int[][] copy = copy(original);
+    original[0][0] = 99;
+    System.out.println("Testing Copy:");
+    System.out.println("original changed: [[99, 2], [3, 4], [5, 6]]\ncopy result: " + arrToString(copy));
+    System.out.println();
+
+    int[][] arrayToSwap = {{1, 2, 3}, {4, 5, 6}};
+    System.out.println("Testing swapRC:");
+    System.out.println("Expected: [[1, 4], [2, 5], [3, 6]]");
+    System.out.println("Actual: " + arrToString(swapRC(arrayToSwap)));
+    System.out.println();
+
+    int[][] arrayForHtml = {{1, 2}, {3}, {4, 5, 6}};
+    System.out.println("Testing htmlTable:");
+    System.out.println("Expected: <table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr><tr><td>4</td><td>5</td><td>6</td></tr></table>");
+    System.out.println("Actual: " + htmlTable(arrayForHtml));
+
   }
+
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
   public static String arrToString(int[]ary){
