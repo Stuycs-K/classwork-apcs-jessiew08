@@ -6,6 +6,18 @@ public class ArrayDemo{
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
 
+    int[] array1D = {1, 2, 3, 4, 5};
+    System.out.println("Testing arrToString (1D):");
+    System.out.println("Expected: " + Arrays.toString(array1D));
+    System.out.println("Actual:   " + arrToString(array1D));
+    System.out.println();
+
+    int[][] array2D = {{1, 2, 3}, {4, 5}, {6, 7, 8, 9}};
+    System.out.println("Testing arrToString (2D):");
+    System.out.println("Expected: " + Arrays.deepToString(array2D)); // Use deepToString for 2D array comparison
+    System.out.println("Actual:   " + arrToString(array2D));
+    System.out.println();
+
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -38,7 +50,7 @@ public class ArrayDemo{
   public static int countZeros2D(int[][] nums){
     int count = 0;
     for (int i=0; i<nums.length; i++) {
-      for (int j=0; j<nums[i].length,j++) {
+      for (int j=0; j<nums[i].length;j++) {
         if (nums[i][j] == 0) {
           count += 1;
         }
