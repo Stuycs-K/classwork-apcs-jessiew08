@@ -14,7 +14,7 @@ public class ArrayDemo{
 
     int[][] array2D = {{1, 2, 3}, {4, 5}, {6, 7, 8, 9}};
     System.out.println("Testing arrToString (2D):");
-    System.out.println("Expected: " + "[[1, 2, 3], [4, 5], [6, 7, 8, 9]]");
+    System.out.println("Expected: " + Arrays.deepToString(array2D));
     System.out.println("Actual: " + arrToString(array2D));
     System.out.println();
 
