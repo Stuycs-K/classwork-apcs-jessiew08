@@ -1,3 +1,6 @@
+// amy zhou amyz83@nycstudents.net
+// jessie wang jassiew27@nycstudents.net
+// axel Stahl axels21@nycstudents.net
 public class Point{
   private double x,y;
 
@@ -14,7 +17,7 @@ public class Point{
   }
 
   //Initialize this Point to have the provided values
-  public Point(double x, double Y){
+  public Point(double x, double y){
     this.x=x;
     this.y=y;
   }
@@ -29,7 +32,7 @@ public class Point{
   Write this method FOURTH, go to the main and do that one first.
   */
   public double distanceTo(Point other){
-    return 0.0;
+    return Math.sqrt((other.x - x)*(other.x - x) + (other.y-y)*(other.y-y));
   }
 
   /*
@@ -37,7 +40,7 @@ public class Point{
   do not write redundant code.
   */
   public static double distance(Point a, Point b){
-    return 0.0;
+    return Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2));
   }
 
 
