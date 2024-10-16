@@ -34,5 +34,12 @@ public class Demo {
     System.out.println(p6.distanceTo(p7)); 
     System.out.println();
 
+    Point eqTri1 = new Point(0, 0);
+    Point eqTri2 = new Point(1, 0);
+    Point eqTri3 = new Point(0.5, Math.sqrt(3) / 2);
+    System.out.println("Side 1: " + eqTri1.distanceTo(eqTri2));
+    System.out.println("Side 2: " + eqTri2.distanceTo(eqTri3));
+    System.out.println("Side 3: " + eqTri3.distanceTo(eqTri1)); 
+
   }
 }
