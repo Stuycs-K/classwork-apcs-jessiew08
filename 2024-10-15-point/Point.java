@@ -1,5 +1,5 @@
 // amy zhou amyz83@nycstudents.net
-// jessie wang jassiew27@nycstudents.net
+// jessie wang jessiew27@nycstudents.net
 // axel Stahl axels21@nycstudents.net
 public class Point{
   private double x,y;
