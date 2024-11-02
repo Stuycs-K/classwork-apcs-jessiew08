@@ -8,7 +8,7 @@ public class ReadFile {
   public static void main(String[] args) {
     //2 Opening a file requires a try/catch
     try {
-      File file = new File("test.txt");//1
+      File file = new File("tester.txt");//1
       Scanner input = new Scanner(file);
       //CODE THAT SCANS THE FILE.
       while(input.hasNextLine()){
