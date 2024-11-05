@@ -71,9 +71,35 @@ public class TriangleTester{
     return count;
   }
 
+  public static int countTrianglesBWithParseInt(String filename) {
+    int count = 0;
+    try (Scanner scanner = new Scanner(new File(filename))) {
+      while (scanner.hasNextLine()) {
+        int[][] triangles = new int[3][3];
+        for (int i = 0; i < 3; i++) {
+          String line = scanner.nextLine();
+          String[] nums = line.split(" +");
+          for (int j = 0; j < 3; j++) {
+            triangles[i][j] = Integer.parseInt(nums[j]);
+          }
+        }
+        for (int i = 0; i < 3; i++) {
+          if (isValidTriangle(triangles[0][i], triangles[1][i], triangles[2][i])) {
+            count++;
+          }
+        }
+      }
+    } catch (FileNotFoundException e) {
+    System.out.println("File not found: " + filename);
+    return 0;
+  }
+  return count;
+}
+
   public static void main(String[] args) {
     System.out.println(countTrianglesA("inputTri.txt"));
     System.out.println(countTrianglesB("inputTri.txt"));
     System.out.println(countTrianglesAWithParseInt("inputTri.txt"));
+    System.out.println(countTrianglesBWithParseInt("inputTri.txt"));
   }
 }
