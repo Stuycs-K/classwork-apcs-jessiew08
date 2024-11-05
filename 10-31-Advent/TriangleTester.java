@@ -33,13 +33,13 @@ public class TriangleTester{
     try (Scanner scanner = new Scanner(new File(filename))) {
       while (scanner.hasNextLine()) {
         int [][] triangles = new int[3][3];
-        for (int i=0; i<2; i++){
+        for (int i=0; i<3; i++){
           Scanner triangle = new Scanner(scanner.nextLine());
-          for (int j=0; j<2; j++){
+          for (int j=0; j<3; j++){
             triangles[i][j] = triangle.nextInt();
           }
         }
-        for (int i=0; i<2; i++){
+        for (int i=0; i<3; i++){
           if (isValidTriangle(triangles[0][i], triangles[1][i], triangles[2][i])){
             count++;
           }
