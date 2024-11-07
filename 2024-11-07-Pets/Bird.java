@@ -38,7 +38,9 @@ public class Bird extends Animal {
 
   //Step 8:In Driver.java answer: What is the difference before and after you override this method?
   //What does this tell us about methods that are overridden?
-  //public String getName(){  }
+  public String getName(){
+    return ("The Mighty "+super.getName());
+  }
 
   //Go back and complete steps 9 onwards.
 
