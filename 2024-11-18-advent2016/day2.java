@@ -2,7 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class BathroomCode {
+public class day2{
   public static void bathroomCode(String filename) {
     int[][] keypad = {{1, 2, 3},{4, 5, 6},{7, 8, 9}};
 
