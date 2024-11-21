@@ -35,6 +35,9 @@ public class day2{
     }
   }
 
+  public static void part2(String filename) {
+    char[][] keypad = {{' ', ' ', '1', ' ', ' '},{' ', '2', '3', '4', ' '},{'5', '6', '7', '8', '9'},{' ', 'A', 'B', 'C', ' '},{' ', ' ', 'D', ' ', ' '}};
+
 
   public static void main(String[] args) {
     String filename = "instructions.txt"; 
