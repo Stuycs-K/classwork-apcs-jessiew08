@@ -31,7 +31,32 @@ public class day6{
 
       int columns = lines[0].length();
       int[][] freq = new int[columns][26];
+
+      for (int i = 0; i < lines.length; i++) {
+        String line = lines[i];
+        for (int j = 0; j < columns; j++) {
+          char c = line.charAt(j);
+          freq[j][c - 'a']++;
+        }
+      }
+
+      for (int i = 0; i < columns; i++) {
+        int maxCount = 0;
+        char mostFrequent = ' ';
+        for (int j = 0; j < 26; j++) {
+          if (freq[i][j] > maxCount) {
+            maxCount = freq[i][j];
+            mostFrequent = (char) (j + 'a');
+          }
+        }
+        message += mostFrequent;
+      }
+
+    } catch (FileNotFoundException e) {
+      System.err.println("File not found: " + filename);
     }
+
+    return message;
   }
 
   public static void main(String[] args) {
