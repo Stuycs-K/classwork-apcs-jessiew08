@@ -61,10 +61,61 @@ public class day1{
 
         visitedX[0] = x;
         visitedY[0] = y;
+        for (int i = 0; i < instructions.length; i++) {
+          String instr = instructions[i];
+          char turn = instr.charAt(0);
+          int distance = Integer.parseInt(instr.substring(1));
+
+          if (turn == 'R') {
+            direction = (direction + 1) % 4;
+          } else if (turn == 'L') {
+            direction = (direction + 3) % 4;
+          }
+
+          for (int step = 0; step < distance; step++) {
+            if (direction == 0) {
+              y++;
+            }
+            else if (direction == 1){
+              x++;
+            }
+            else if (direction == 2) {
+              y--;
+            }
+            else if (direction == 3) {
+              x--;
+            }
+            for (int j = 0; j < visitCount; j++) {
+              if (visitedX[j] == x && visitedY[j] == y) {
+                return Math.abs(x) + Math.abs(y);
+              }
+            }
+            if (visitCount == visitedX.length) {
+              int[] newVisitedX = new int[visitedX.length * 2];
+              int[] newVisitedY = new int[visitedY.length * 2];
+              for (int k = 0; k < visitedX.length; k++) {
+                newVisitedX[k] = visitedX[k];
+                newVisitedY[k] = visitedY[k];
+              }
+              visitedX = newVisitedX;
+              visitedY = newVisitedY;
+            }
+            visitedX[visitCount] = x;
+            visitedY[visitCount] = y;
+            visitCount++;
+          }
+        }
+      }
+    } catch (FileNotFoundException e) {
+      System.out.println("File not found: " + filename);
+    }
+
+    return -1;
+  }
 
   public static void main(String[] args) {
     String filename = "input.txt";
-    int result = countBlocks(filename);
+    int result = part2(filename);
     System.out.println(result);
   }
 }
