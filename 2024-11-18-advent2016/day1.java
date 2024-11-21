@@ -14,7 +14,8 @@ public class day1{
         int y = 0;
         int direction = 0; 
 
-        for (String instr : instructions) {
+        for (int i = 0; i < instructions.length; i++) {
+          String instr = instructions[i];
           char turn = instr.charAt(0);
           int distance = Integer.parseInt(instr.substring(1));
 
@@ -43,6 +44,23 @@ public class day1{
 
     return count;
   }
+
+  public static int part2(String filename) {
+    try (Scanner scanner = new Scanner(new File(filename))) {
+      while (scanner.hasNext()) {
+        String line = scanner.nextLine();
+        String[] instructions = line.split(",\\s*");
+
+        int x = 0;
+        int y = 0;
+        int direction = 0;
+
+        int[] visitedX = new int[1];
+        int[] visitedY = new int[1];
+        int visitCount = 1;
+
+        visitedX[0] = x;
+        visitedY[0] = y;
 
   public static void main(String[] args) {
     String filename = "input.txt";
