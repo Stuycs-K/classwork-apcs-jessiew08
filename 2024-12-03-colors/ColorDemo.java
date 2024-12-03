@@ -9,7 +9,7 @@ public class ColorDemo{
     System.out.print( "\u001b[" + foreground + ";" + (10+background) + "m");
   }
 
-  public static Void color(int foreground, int background, int modifier){
+  public static void color(int foreground, int background, int modifier){
     System.out.print( "\u001b[" + foreground + ";" + (10+background) + ";" + modifier + "m");
   }
 
@@ -23,5 +23,4 @@ public class ColorDemo{
     System.out.println();
     }
   }
-}
 }
