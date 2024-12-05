@@ -49,4 +49,17 @@ public class Driver{
   public static void moveCursorToEnd(int height) {
     System.out.print("\033[" + (height + 1) + ";1H");
   }
+
+  public static void main(String[] args) {
+    int width = 80;
+    int height = 30;
+    Random rand = new Random();
+    int[] randomInts = {rand.nextInt(100), rand.nextInt(100), rand.nextInt(100)};
+
+    makeBorder(width, height);
+    displayRandomNumbers(randomInts, width);
+    makeHorizontalSeparator(width, 2);
+    makeMiddleArt(width, height);
+    moveCursorToEnd(height);
+  }
 }
