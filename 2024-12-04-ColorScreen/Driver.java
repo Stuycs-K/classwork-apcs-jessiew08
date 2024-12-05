@@ -30,3 +30,11 @@ public class Driver{
     }
     System.out.println();
   }
+
+  public static void makeHorizontalSeparator(int width, int row) {
+    System.out.print("\033[" + row + ";1H");
+    for (int x = 0; x < width; x++) {
+      System.out.print("\u001B[44m-\u001B[0m");
+    }
+    System.out.println();
+  }
