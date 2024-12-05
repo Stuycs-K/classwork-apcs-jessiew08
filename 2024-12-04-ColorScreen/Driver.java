@@ -38,3 +38,10 @@ public class Driver{
     }
     System.out.println();
   }
+
+  public static void makeMiddleArt(int width, int height) {
+    int midX = width / 2;
+    int midY = height / 2;
+    System.out.print("\033[" + midY + ";" + midX + "H");
+    System.out.print("\u001B[93m:)\u001B[0m");
+  }
