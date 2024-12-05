@@ -45,3 +45,8 @@ public class Driver{
     System.out.print("\033[" + midY + ";" + midX + "H");
     System.out.print("\u001B[93m:)\u001B[0m");
   }
+
+  public static void moveCursorToEnd(int height) {
+    System.out.print("\033[" + (height + 1) + ";1H");
+  }
+}
