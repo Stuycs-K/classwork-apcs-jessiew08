@@ -23,7 +23,7 @@ public abstract class Warrior extends Adventurer{
     other.applyDamage(getSpecial());
     return getName() + " attacks " + other.getName() + ", dealing 10 damage!";
   }
-  public String specialAttack(Adventurere other){
+  public String specialAttack(Adventurer other){
     if (getSpecial() >= 10){
       other.applyDamage(20);
       setSpecial(getSpecial() - 10);
@@ -32,5 +32,15 @@ public abstract class Warrior extends Adventurer{
     else{
       return getName() + " tries a special attack but lacks Strength!";
     }
- }
+  }  
+  public String support() {
+    if (getSpecial() >= 10) {
+      setHP(getHP() + 10);
+      getSpecial() -= 10;
+      return getName() + " restores 10 HP to themselves, using 10 Strength!";
+    } 
+    else {
+      return getName() + " tries to restore HP but lacks Strength!";
+    }
+  }
 }
