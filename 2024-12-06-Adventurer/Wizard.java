@@ -1,4 +1,4 @@
-public class Wizard{
+public class Wizard extends Adventurer{
   private int mana;
 
   public Wizard(String name) {

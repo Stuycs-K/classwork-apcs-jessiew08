@@ -1,4 +1,4 @@
-public abstract class Dragon extends Adventurer {
+public class Dragon extends Adventurer {
   private int rage;
 
   public Dragon(String name) {

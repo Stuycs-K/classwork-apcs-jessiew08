@@ -1,4 +1,6 @@
-public abstract class Warrior extends Adventurer{
+public class Warrior extends Adventurer{
+  private int special;
+
   public Warrior(String name){
     super(name);
     this.special = 25;
@@ -36,11 +38,20 @@ public abstract class Warrior extends Adventurer{
   public String support() {
     if (getSpecial() >= 10) {
       setHP(getHP() + 10);
-      getSpecial() -= 10;
+      setSpecial(getSpecial() - 10);
       return getName() + " restores 10 HP to themselves, using 10 Strength!";
     } 
     else {
       return getName() + " tries to restore HP but lacks Strength!";
+    }
+  }
+  public String support(Adventurer other) {
+    if (getSpecial() >= 10) {
+      other.setHP(other.getHP() + 10);
+      setSpecial(getSpecial() - 10);
+      return getName() + " supports " + other.getName() + " by restoring 10 HP, using 10 Strength!";
+    } else {
+      return getName() + " lacks enough Strength to support " + other.getName() + "!";
     }
   }
 }
