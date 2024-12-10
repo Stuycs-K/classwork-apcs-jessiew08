@@ -6,7 +6,7 @@ public class CodeWarrior extends Adventurer{
     with all parameters.*/
   public CodeWarrior(String name, int hp, String language){
     super(name,hp);
-    caffeineMax = 12;
+    caffeineMax = 80;
     caffeine = caffeineMax/2;
     preferredLanguage = language;
   }
@@ -16,7 +16,7 @@ public class CodeWarrior extends Adventurer{
   }
 
   public CodeWarrior(String name){
-    this(name,12);
+    this(name,100);
   }
 
   public CodeWarrior(){
