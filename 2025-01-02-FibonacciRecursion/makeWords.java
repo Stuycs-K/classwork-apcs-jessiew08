@@ -10,11 +10,11 @@ public class makeWords{
     }
   }
 
-  private String[] ones = {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
-  private String[] teens = {"ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen","sixteen","seventeen", "eighteen", "nineteen"};
-  private String[] tens = {"", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+  private static final String[] ones = {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+  private static final String[] teens = {"ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen","sixteen","seventeen", "eighteen", "nineteen"};
+  private static final String[] tens = {"", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
 
-  private String convert(int n) {
+  private static String convert(int n) {
     if (n < 10) {
       return ones[n];
     }
@@ -24,7 +24,7 @@ public class makeWords{
     if (n < 100) {
       String result = tens[n / 10];
       if (n % 10 != 0) {
-        result += "-" + ones[n % 10];
+        result += " " + ones[n % 10];
       }
       return result;
     }
@@ -56,6 +56,11 @@ public class makeWords{
   }
 
   public static void main(String[] args){
-    makeWords(3, "", "abc");
+    //makeWords(3, "", "abc");
+    System.out.println(toWords(14));
+    System.out.println(toWords(94));
+    System.out.println(toWords(342));
+    System.out.println(toWords(115));
+    System.out.println(toWords(999999));
   }
 }
