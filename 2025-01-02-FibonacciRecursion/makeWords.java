@@ -14,8 +14,45 @@ public class makeWords{
   private String[] teens = {"ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen","sixteen","seventeen", "eighteen", "nineteen"};
   private String[] tens = {"", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
 
+  private String convert(int n) {
+    if (n < 10) {
+      return ones[n];
+    }
+    if (n < 20) {
+      return teens[n - 10];
+    }
+    if (n < 100) {
+      String result = tens[n / 10];
+      if (n % 10 != 0) {
+        result += "-" + ones[n % 10];
+      }
+      return result;
+    }
+    if (n < 1000) {
+      String result = ones[n / 100] + " hundred";
+      if (n % 100 != 0) {
+        result += " and " + convert(n % 100);
+      }
+      return result;
+    }
+    if (n < 1000000) {
+      String result = convert(n / 1000) + " thousand";
+      if (n % 1000 != 0) {
+        result += " " + convert(n % 1000);
+      }
+      return result;
+    }
+    return "out of range";
+  }
+
   public static String toWords(int n){
-    
+    if (n == 0) {
+      return "zero";
+    }
+    if (n < 0) {
+      return "negative " + toWords(-n);
+    }
+    return convert(n);
   }
 
   public static void main(String[] args){
