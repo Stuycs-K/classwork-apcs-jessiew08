@@ -10,6 +10,10 @@ public class makeWords{
     }
   }
 
+  private String[] ones = {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+  private String[] teens = {"ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen","sixteen","seventeen", "eighteen", "nineteen"};
+  private String[] tens = {"", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+
   public static String toWords(int n){
     
   }
